@@ -1,0 +1,1 @@
+Este trabalho é referente à criação de um servidor Javascript, que seja capaz de processar pedidos de ficheiros HTML , gerados a partir de um ficheiro XML, o Arquivo Músical. O processo de geração de ficheiros HTML é feito através da aplicação de uma Stylesheet XSLT ao ficheiro XML.
