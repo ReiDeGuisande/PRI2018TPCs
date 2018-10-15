@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT processo (descritivo,contexto,decisão) >
+
+<!ATTLIST processo
+            estado CDATA #REQUIRED
+            classe_pai (IDREF|CDATA) #REQUIRED
+            id ID #REQUIRED
+            titulo CDATA #REQUIRED>
+
+<!ELEMENT descritivo (descrição, nota_aplicação, exemplo,nota_exclusão, termo) >
+<!ELEMENT descrição (#PCDATA) >
+<!ELEMENT nota_aplicação (para)+ >
+<!ELEMENT exemplo (para)* >
+<!ELEMENT nota_exclusão (para)* >
+<!ELEMENT termo (para)+  >
+<!ELEMENT para (#PCDATA|b|i)* > 
+<!ELEMENT b (#PCDATA|i)* >
+<!ELEMENT i (#PCDATA|b)* >
+
+<!ELEMENT contexto (tipo_proc, proc_tranv, donos, tipo_int_par, proc_rel, legisl) >
+<!ELEMENT tipo_proc (#PCDATA) >
+<!ELEMENT proc_tranv (#PCDATA) >
+<!ELEMENT donos (topico)+ >
+<!ELEMENT tipo_int_par (topico)+ >
+<!ELEMENT proc_rel (topico)+ >
+<!ELEMENT legisl (topico)+ >
+
+<!ELEMENT topico (hiper|para) >
+<!ELEMENT hiper (#PCDATA) >
+
+
+<!ELEMENT decisão (prazo_cons, destino_fin) >
+<!ELEMENT prazo_cons (prazo, forma, just) >
+<!ELEMENT prazo (#PCDATA) >
+<!ELEMENT forma (#PCDATA) >
+<!ELEMENT just (para)+ >
+<!ELEMENT destino_fin (destino, just) >
+<!ELEMENT destino (#PCDATA) >
