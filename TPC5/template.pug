@@ -1,0 +1,50 @@
+extends layout
+
+block corpo
+    .w3-container
+        .w3-card-4
+            header.w3-container.w3-light-blue
+                h1= arqmus.titulo
+            .w3-container
+                table.w3-table.w3-all
+                    tr
+                        th Tipo: 
+                        td= arqmus.tipo
+                        th Compositor:
+                        td= arqmus.compositor
+                    tr  
+                        th Arranjo:
+                        td
+                            if arqmus.arranjo
+                                p=arqmus.arranjo
+                    tr
+                        th Partituras disponíveis
+                        .w3-container
+                            table.w3-table.w3-border
+                                tr
+                                    th Instrumento 
+                                    th Afinação
+                                    th Voz
+                                    th Clave
+                                each i in arqmus.instrumentos
+                                    tr
+                                        td 
+                                            if i.nome
+                                                p=i.nome
+                                        td 
+                                            if i.partitura.afinacao
+                                                p=i.partitura.afinacao
+                                        td 
+                                            if i.partitura.voz
+                                                p=i.partitura.voz
+                                        td 
+                                            if i.partitura.clave
+                                                p=i.partitura.clave
+
+            footer.w3-container.w3-light-blue
+                p
+                    a(href='http://localhost:5555/index') 
+                        | Voltar à página principal
+                address Gerado por ArqMusicApp by Tiago Sá
+                
+                                               

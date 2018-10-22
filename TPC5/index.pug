@@ -1,0 +1,27 @@
+extends layout
+
+block corpo
+    .w3-container
+        .w3-card-4
+            header.w3-container.w3-light-blue
+                h3 Arquivo de Música Digital
+            .w3-container
+                table.w3-table.w3-bordered
+                    tr
+                        th Tipo
+                        th Titulos
+                    each t in arq.tipos
+                        tr
+                            td
+                                if t.tipo
+                                    p= t.tipo
+                            td
+                                ul
+                                    each o in arq.obras
+                                        if t.tipo == o.tipo
+                                            li
+                                                a(href='http://localhost:5555/obra/' + o.id)= o.titulo
+            footer.w3-container.w3-light-blue
+                address Gerado por ArqMusicApp by Tiago Sá
+                
+                                               

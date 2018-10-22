@@ -1,0 +1,15 @@
+{
+  "name": "tpc5",
+  "version": "1.0.0",
+  "description": "Homework assignment",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js"
+  },
+  "author": "Tiago Sá",
+  "license": "ISC",
+  "dependencies": {
+    "glob": "^7.1.3",
+    "pug": "^2.0.3"
+  }
+}
