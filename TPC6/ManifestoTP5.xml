@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE manifesto SYSTEM "file:/C:/Users/Tiago/Desktop/PLC/PRI/TPC3/Manifesto.dtd">
+<manifesto>
+    <meta>
+        <id>TP5</id>
+        <título>Website do Arquivo de Música Digital</título>
+        <subtítulo></subtítulo>
+        <dinício>15-10-2018</dinício>
+        <dfim>22-10-2018</dfim>
+        <supervisor>
+            <nome>José Carlos Ramalho</nome>
+            <email>jcr@di.uminho.pt</email>
+            <website>http://www.di.uminho.pt/~jcr</website>
+        </supervisor>
+    </meta>
+    <equipe>
+        <elemento>
+            <id>a71835</id>
+            <nome>Tiago Filipe Oliveira Sá</nome>
+            <email>tiagosa95@gmail.com</email>
+            <website></website>
+            <foto path=""/>
+        </elemento>
+    </equipe>
+    <resumo>
+        <para>Este trabalho é referente à criação de um servidor <i>Javascript</i>, que seja capaz de carregar vários ficheiros <i>JSON</i> , e a partir deste conjunto de ficheiros, gerar um indíce, em <i>PUG</i>. A partir desse indíce, geram-se páginas <i>HTML</i>, carregando o ficheiro <i>JSON</i> desejado.
+            Este é lido no servidor, passa por uma transformação em <i>PUG</i>, resultando numa página <i>HTML</i>. Os pedidos de acesso às páginas do website, são controlados pelo servidor.
+           Este website é referente ao Arquivo de Música Digital. 
+        </para>
+    </resumo>
+    <resultados>
+        <resultado path="https://github.com/ReiDeGuisande/PRI2018TPCs">Link para o Github dos TPCs de PRI</resultado>
+    </resultados>
+</manifesto>
