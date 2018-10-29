@@ -1,0 +1,32 @@
+extends layout
+block content
+    .w3-container
+        .w3-card-4
+            header.w3-container.w3-dark-grey
+                h2 Gestor de Teses
+            .w3-container
+                hr
+                table.w3-table
+                    tr
+                        th Descrição
+                        tr
+                            td
+                                P='Aplicação criada para registo de teses, tendo em conta dados relativo ao aluno e à tese.'
+                                p='É possível também uma listagem de todas as teses introduzidas na base de dados.'
+                    tr
+                        td
+                    tr
+                        th Funcionalidades
+                        tr
+                            td
+                        tr
+                            td
+                                form.w3-container(action='/registo', method='GET')
+                                    input.w3-btn.w3-blue-grey(type='submit', value='Registar uma tese')
+                        tr                
+                            td
+                                form.w3-container(action='/lista', method='GET')
+                                    input.w3-btn.w3-blue-grey(type='submit', value='Listar todas as teses')
+                hr
+                footer.w3-container.w3-light-grey
+                    address Gerado por myThesesApp

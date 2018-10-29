@@ -1,0 +1,56 @@
+extends layout
+block content
+    .w3-container
+        .w3-card-4
+            header.w3-container.w3-dark-grey
+                h3 Tese Recebida
+            .w3-container
+                table.w3-table
+                    tr
+                        th Dados do aluno
+                        td
+                            .w3-container
+                                table.w3-table-all 
+                                    tr
+                                        th Nome do aluno
+                                        td= tese.nome
+                                        th
+                                        td
+                                    tr
+                                        th Número/Identificador
+                                        td= tese.identificador
+                                        th
+                                        td
+                                    tr
+                                        th Curso
+                                        td= tese.curso
+                                        th Tipo  
+                                        td= tese.cursoTipo
+                                    tr
+                                        th Instituição
+                                        td= tese.instituicao
+                                        th
+                                        td
+                    tr
+                        th Dados da tese
+                        td
+                            .w3-container
+                                table.w3-table-all 
+                                    tr
+                                        th Nome da tese
+                                        td= tese.nomeTese
+
+                                    tr
+                                        th Data
+                                        td= tese.data
+
+                                    tr
+                                        th Tipo de tese
+                                        td= tese.teseTipo
+                   
+                p
+                    a(href='http://localhost:4500/')
+                        | Voltar à página principal
+            footer.w3-container.w3-light-grey
+                address Gerado por myThesesApp 
+        

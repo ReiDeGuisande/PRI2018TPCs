@@ -28,9 +28,9 @@ var myServer = http.createServer((req,res)=> {
             })
         }
         else if(purl.pathname == '/lista') {
-            jsonfile.readFile(myDB, (erro,alunos)=> {
+            jsonfile.readFile(myDB, (erro,teses)=> {
                 if(!erro)
-                    res.end(pug.renderFile('lista-teses.pug'))
+                    res.end(pug.renderFile('lista-teses.pug',{lista: teses}))
                 else
                     res.end(pug.renderFile('erro.pug',{e: erro}))
             })
@@ -40,7 +40,7 @@ var myServer = http.createServer((req,res)=> {
     else if(req.method == 'POST') {
         if(purl.pathname == '/processaTese') {
             recuperaInfo(req,resultado => {
-                jsonfile.readFile(myBD,(erro,teses)=> {
+                jsonfile.readFile(myDB,(erro,teses)=> {
                     if(!erro) {
                         teses.push(resultado)
                         jsonfile.writeFile(myDB,teses,erro1=> {
@@ -78,10 +78,10 @@ function recuperaInfo (request, callback) {
     if(request.headers['content-type'] === FORM_URLENCODED) {
         let body = ''
         request.on('data', chunk => {
-            body += chunk-toString()
+            body += chunk.toString()
         })
         request.on('end',()=> {
-            callbac(parse(body))
+            callback(parse(body))
         })
     }
     else

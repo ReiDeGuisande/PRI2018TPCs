@@ -5,47 +5,48 @@ block content
             header.w3-container.w3-dark-grey
                 h3 Registo de Tese
             .w3-container
-                h4 Informação pessoal
                 form.w3-container(action='/processaTese',method='POST')
-                    label.w3-text-teal
-                        b Nome
-                    input.w3-input.w3-border.w3-light-grey(type='text',name='nome')
-                    label.w3-text-teal
-                        b Número/Identificador
-                    input.w3-input.w3-border.w3-light-grey(type='text',name='identificador')
-                    label.w3-text-teal
-                        b Curso
-                    input.w3-input.w3-border.w3-light-grey(type='text',name='curso')
+                    h4 Informação pessoal
                     .w3-container
-                        table.w3-table
-                            tr
-                                td Mestrado   
-                                    input.w3-btn.w3-blue-grey(type='radio', name='cursoTipo' value='Mestrado') 
-                                td Doutoramento   
-                                    input.w3-btn.w3-blue-grey(type='radio', name='cursoTipo' value='Doutoramento')
-                    label.w3-text-teal
-                        b Instituição
-                    input.w3-input.w3-border.w3-light-grey(type='text',name='instituicao')
-                br
-                h4 Informação da tese
-                form.w3-container(action='/processaTese',method='POST')
-                    label.w3-text-teal
-                        b Nome
-                    input.w3-input.w3-border.w3-light-grey(type='text',name='nometese')
-                    label.w3-text-teal
-                        b Data
-                    input.w3-input.w3-border.w3-light-grey(type='text',name='data')
-                    label.w3-text-teal
-                        b Tipo de tese
-                    .w3-container
-                        table.w3-table
-                            tr
-                                td Mestrado   
-                                    input.w3-btn.w3-blue-grey(type='radio', name='teseTipo' value='Mestrado') 
-                                td Doutoramento   
-                                    input.w3-btn.w3-blue-grey(type='radio', name='teseTipo' value='Doutoramento')
-                    hr
-                    input.w3-btn.w3-blue-grey(type='submit', value='Enviar')
+                        label.w3-text-teal
+                            b Nome
+                        input.w3-input.w3-border.w3-light-grey(type='text',name='nome')
+                        label.w3-text-teal
+                            b Número/Identificador
+                        input.w3-input.w3-border.w3-light-grey(type='text',name='identificador')
+                        label.w3-text-teal
+                            b Curso
+                        input.w3-input.w3-border.w3-light-grey(type='text',name='curso')
+                        .w3-container
+                            table.w3-table
+                                tr
+                                    td Mestrado   
+                                        input.w3-btn.w3-blue-grey(type='radio', name='cursoTipo' value='Mestrado') 
+                                    td Doutoramento   
+                                        input.w3-btn.w3-blue-grey(type='radio', name='cursoTipo' value='Doutoramento')
+                        label.w3-text-teal
+                            b Instituição
+                        input.w3-input.w3-border.w3-light-grey(type='text',name='instituicao')
+                    br
+                    h4 Informação da tese
+                    .w3-container               
+                        label.w3-text-teal
+                            b Nome
+                        input.w3-input.w3-border.w3-light-grey(type='text',name='nomeTese')
+                        label.w3-text-teal
+                            b Data
+                        input.w3-input.w3-border.w3-light-grey(type='text',name='data')
+                        label.w3-text-teal
+                            b Tipo de tese
+                        .w3-container
+                            table.w3-table
+                                tr
+                                    td Mestrado   
+                                        input.w3-btn.w3-blue-grey(type='radio', name='teseTipo' value='Mestrado') 
+                                    td Doutoramento   
+                                        input.w3-btn.w3-blue-grey(type='radio', name='teseTipo' value='Doutoramento')
+                        hr
+                        input.w3-btn.w3-blue-grey(type='submit', value='Enviar')
                     p
                         a(href='http://localhost:4500/')
                             | Voltar à página principal

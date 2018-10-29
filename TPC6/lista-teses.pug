@@ -1,0 +1,32 @@
+extends layout
+block content
+    .w3-container
+        .w3-card-3
+            header.w3-container.w3-dark-grey
+                h3 Lista de teses
+            .w3-container
+                table.w3-table-all
+                    tr
+                        th Nome da tese
+                        th Tipo de tese
+                        th Data
+                        th Aluno
+                        th Número/Identificador
+                        th Curso
+                        th Tipo de curso
+                        th Instituição
+                    each t in lista
+                        tr
+                            td=t.nomeTese
+                            td=t.teseTipo
+                            td=t.data
+                            td=t.nome
+                            td=t.identificador
+                            td=t.curso
+                            td=t.cursoTipo
+                            td=t.instituicao           
+                p
+                    a(href='http://localhost:4500/')
+                        | Voltar à página principal
+            footer.w3.container.w3-light-grey
+                address Gerado por myThesesApp

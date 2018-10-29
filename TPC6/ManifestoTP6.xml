@@ -2,11 +2,11 @@
 <!DOCTYPE manifesto SYSTEM "file:/C:/Users/Tiago/Desktop/PLC/PRI/TPC3/Manifesto.dtd">
 <manifesto>
     <meta>
-        <id>TP5</id>
-        <título>Website do Arquivo de Música Digital</título>
+        <id>TP6</id>
+        <título>Aplicação Web para Gestão de Teses</título>
         <subtítulo></subtítulo>
-        <dinício>15-10-2018</dinício>
-        <dfim>22-10-2018</dfim>
+        <dinício>22-10-2018</dinício>
+        <dfim>29-10-2018</dfim>
         <supervisor>
             <nome>José Carlos Ramalho</nome>
             <email>jcr@di.uminho.pt</email>
@@ -23,9 +23,7 @@
         </elemento>
     </equipe>
     <resumo>
-        <para>Este trabalho é referente à criação de um servidor <i>Javascript</i>, que seja capaz de carregar vários ficheiros <i>JSON</i> , e a partir deste conjunto de ficheiros, gerar um indíce, em <i>PUG</i>. A partir desse indíce, geram-se páginas <i>HTML</i>, carregando o ficheiro <i>JSON</i> desejado.
-            Este é lido no servidor, passa por uma transformação em <i>PUG</i>, resultando numa página <i>HTML</i>. Os pedidos de acesso às páginas do website, são controlados pelo servidor.
-           Este website é referente ao Arquivo de Música Digital. 
+        <para>Este trabalho é referente à criação de uma aplicação Web, que seja capaz de registar teses e lista-las. Para tal, foi criado um servidor em <i>Javascript</i>, que fosse capaz de processar os pedidos GET e POST. O processamento da informação é feito com o auxílio de formulários, que foram implementados em <i>PUG</i>. Os dados são processados no servidor, e são posteriormente guardados num ficheiro  <i>JSON</i>, que servirá como base de dados, para este exercício.
         </para>
     </resumo>
     <resultados>
