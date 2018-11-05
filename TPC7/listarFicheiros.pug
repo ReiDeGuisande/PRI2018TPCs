@@ -1,0 +1,24 @@
+extends layout
+block content
+    .w3-container
+        .w3-card-4
+                header.w3-container.w3-dark-grey
+                    h3 Lista Ficheiros
+                .w3-container
+                    table.w3-table.all  
+                        tr
+                            th Ficheiro:
+                            th Descrição:
+                        each f in ficheiros
+                            -var link = f.nome;
+                            tr
+                                td
+                                    a(href= link)=f.nome   
+                                td= f.desc
+                    br
+                p
+                    a(href='http://localhost:5001')
+                        | Voltar à página principal
+                footer.w3-container.w3-dark-grey
+                    address 
+                        b Gerado por myUpApp

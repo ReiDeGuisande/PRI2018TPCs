@@ -1,0 +1,23 @@
+extends layout
+block content
+    .w3-container
+        .w3-card-3
+            header.w3-container.w3-dark-grey
+                h3 Upload de ficheiros
+            .w3-container
+                form.w3-container(action='/processaForm', method='POST', enctype='multipart/form-data')
+                    label.w3-text-black
+                        b Novo Ficheiro
+                    input.w3-input.w3-border.w3-light-grey(type='file',name='ficheiro')
+                    label.w3-text-dark-grey
+                        b Descrição
+                    input.w3-input.w3-border.w3-light-grey(type='text',name='desc')
+                    br
+                    input.w3-btn.w3-blue-grey(type='submit',value='Enviar')
+            hr
+            .w3-container
+                form.w3-container(action='/listar', method='GET')
+                    input.w3-btn.w3-blue-grey(type='submit', value='Listar todos os ficheiros submetidos')
+            hr
+            footer.w3-container.w3-dark-grey
+                address Gerado por myUpApp
