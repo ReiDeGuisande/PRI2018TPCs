@@ -3,10 +3,10 @@
 <manifesto>
     <meta>
         <id>TP6</id>
-        <título>Aplicação Web para Gestão de Teses</título>
+        <título>Aplicação Web para Upload de Ficheiros</título>
         <subtítulo></subtítulo>
-        <dinício>22-10-2018</dinício>
-        <dfim>29-10-2018</dfim>
+        <dinício>29-10-2018</dinício>
+        <dfim>05-11-2018</dfim>
         <supervisor>
             <nome>José Carlos Ramalho</nome>
             <email>jcr@di.uminho.pt</email>
@@ -23,7 +23,7 @@
         </elemento>
     </equipe>
     <resumo>
-        <para>Este trabalho é referente à criação de uma aplicação Web, que seja capaz de registar teses e lista-las. Para tal, foi criado um servidor em <i>Javascript</i>, que fosse capaz de processar os pedidos GET e POST. O processamento da informação é feito com o auxílio de formulários, que foram implementados em <i>PUG</i>. Os dados são processados no servidor, e são posteriormente guardados num ficheiro  <i>JSON</i>, que servirá como base de dados, para este exercício.
+        <para>Este trabalho é referente à criação de uma aplicação Web, que seja capaz de fazer o upload de ficheiros e listagem destes. Para tal, foi criado um servidor em <i>Javascript</i>, que fosse capaz de processar os pedidos GET e POST. O formulário de submissão de ficheiros, e a sua listagem é feita recorrendo a <i>PUG</i>. Os dados são processados no servidor, e são posteriormente guardados num ficheiro  <i>JSON</i>, que servirá como base de dados, para este exercício.
         </para>
     </resumo>
     <resultados>
