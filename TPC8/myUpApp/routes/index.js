@@ -18,29 +18,31 @@ router.get('/fich', (req,res)=> {
 
 router.post('/processa',(req,res)=> {
   var form = new formidable.IncomingForm()
+  var r = JSON.stringify('')
   form.parse(req,(erro,fields,files)=> {
 
-    var fenvidado = files.ficheiro.path
+    var fenviado = files.ficheiro.path
+    console.dir(fenviado)
     var fnovo = './public/images/'+files.ficheiro.name
-    fs.rename(fenvidado,fnovo,erro => {
+    r = JSON.stringify(files.ficheiro.name)
+    fs.rename(fenviado,fnovo,erro => {
       if(!erro) {
-        console.dir(fields.descr)
+        console.dir('Ficheiro: '+files.ficheiro.name+' gravado com sucesso!')
+        res.json(r)
       }
-    })
-      
-
+      else {
+        console.dir(erro)
+      }
+    }) 
   })
-  res.json(form)
-
 })
 
 router.post('/fich/guardar', (req,res)=> {
   var f = req.body.ficheiro
-  console.dir(f)
-
+  var d = req.body.desc
   jsonfile.readFile(myDB, (erro, fichs)=> {
     if(!erro) {
-      fichs.push(f)
+      fichs.push({desc: d, nome: f})
       console.dir(fichs)
       jsonfile.writeFile(myDB,fichs,erro2 => {
         if(!erro2)

@@ -5,8 +5,8 @@ $(() => {
     $('#adicionar').click(e=> {
         e.preventDefault()
         var filename = $('#fich').val().split('\\').pop();
-        $('#ficheiros').append('<li>'+'<a href='+filename+'/>'+'</li>')
-        //ajaxPost()
+        $('#ficheiros').append('<li>'+ filename+'</li>')
+        ajaxPost()
         formPost()
     })
 
@@ -16,14 +16,12 @@ $(() => {
             contentType: "application/json",
             url: "http://localhost:5001/fich/guardar",
             data: JSON.stringify({ficheiro: $('#fich').val().split('\\').pop(),desc: $('#desc').val()}),
-            success: p => alert('Ficheiro gravado com sucesso!'+p),
+            success: p => alert('Dados gravados com sucesso!'+p),
             error: e => {
                 alert('Erro no post: ' + JSON.stringify(e))
                 console.log('ERRO: '+e)
             }
         })
-        $('#desc').val('')
-        $('#fich').val('')
     }
 
     function formPost() {
@@ -36,6 +34,7 @@ $(() => {
             async: true,
             cache: false,
             data : form_data,
+            timeout: 6000,
             success: p => alert('Ficheiro gravado com sucesso!'+p),
             error: e => {
                 alert('Erro no post: ' + JSON.stringify(e))
