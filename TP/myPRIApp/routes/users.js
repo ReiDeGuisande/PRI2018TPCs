@@ -1,41 +1,42 @@
-var express = require('express');
-var router = express.Router();
-const passport = require('passport');
-const User = require('../models/users');
+var express = require('express')
+var router = express.Router()
+var axios = require('axios')
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+
+router.get('/', (req,res)=> {
+  res.render('users')
+})
 
 router.get('/user', (req,res)=> {
   res.render('userRegister')
 })
 
-router.post('/register', (req, res, next) => {
-  
-  var newUser = new User ({
-    username : req.body.username, 
-    name: req.body.name, 
-    mail: req.body.mail,
+router.get('/list', (req,res)=> {
+  axios.get('http://localhost:5555/api/users/list')
+    .then(users=> res.render('user', {users: users.data}))
+    .catch(error => {
+      console.log('Error displaying users '+error)
+      res.render('error', {error: error, message: "displaying users."})
   })
-  console.dir(req.body.type)
-  console.dir('touuuu')
-
-  User.register(newUser, req.body.password, (err, user) => {
-      if (err) {
-        //return res.render('register', { error : err.message });
-      }
-      else res.jsonp(JSON.stringify('OK'))
-      passport.authenticate('local')(req, res, () => {
-          req.session.save((err) => {
-              if (err) {
-                  return next(err);
-              }
-              res.redirect('/');
-          });
-      });
-  });
 })
 
-module.exports = router;
+router.get('/user/:id', (req,res)=> {
+  axios.get('http://localhost:5555/api/users/user/'+req.params.id)
+    .then(user=> res.render('user', {user: user.data}))
+    .catch(error => {
+      console.log('Error displaying user '+error)
+      res.render('error', {error: error, message: "displaying user."})
+  })
+})
+
+router.post('/user', (req,res) => {
+  axios.post('http://localhost:5555/api/users/user', req.body) 
+      .then(() => res.redirect('http://localhost:5555/users'))
+      .catch(error => {
+          console.log('Insertion error '+error)
+          res.render('error', {error: error, message: "Error in insertion"})
+      })
+})
+
+module.exports = router
